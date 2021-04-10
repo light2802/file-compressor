@@ -5,10 +5,10 @@ This Project is published under GPL. So please feel free to suggest any changes 
 Also I am making this in my Second Year of engineering Degree so please don't judge if you finad any bugs or don't feel it is up to your standards
 
 # Steps to run the code
-Run .\aar <parameter> <filename with extension>
-Parameters:
--e : To encode the file
--d : To decode the file
+Run .\aar <-parameter-> <-filename with extension-> <br>
+Parameters:<br>
+-e : To encode the file<br>
+-d : To decode the file<br>
 
 # Wiki-Knowledge
 
