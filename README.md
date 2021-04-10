@@ -10,6 +10,12 @@ Parameters:<br>
 -e : To encode the file<br>
 -d : To decode the file<br>
 
+# Some known issues
+The file extension is overwrriten(appended)<br>
+For ex. if you compress a file with name Demo.txt it creates new file with name Demo.txt.aar Also when you decode this Demo.txt.aar you will get your new file with name Demo.txt.aar.txt<br>
+I know it's a easy fix but I'm lazy ;)<br>
+Also the code only encodes single .txt files. Going to work further on multiple files and directories
+
 # Wiki-Knowledge
 
 Abraham Lempel and Jacob Ziv are considered to be pioneers in the field of data compression techniques, this is due to two academic papers they jointly published in the late 1970s that outlined a technique to efficiently compress data without any loss of information. For this article I'll be looking at the algorithm outlined in the first paper, which is commonly known known as LZ1.
