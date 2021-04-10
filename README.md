@@ -2,7 +2,8 @@
 # DSA-Project-zip
 
 This Project is published under GPL. So please feel free to suggest any changes to make this good <br>
-Also I am making this in my Second Year of engineering degree so please don't judge if you finad any bugs or don't feel it is up to your standards
+Also I am making this in my Second Year of engineering degree so please don't judge if you finad any bugs or don't feel it is up to your standards<br>
+Also please give a star on my github (light2802) if you liked it :)<br>
 
 # Steps to run the code
 Run .\aar <-parameter-> <-filename with extension-> <br>
