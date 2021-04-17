@@ -12,7 +12,7 @@ Parameters:<br>
 -d : To decode the file<br>
 
 # Code flow in general terms
-[!title]("flow of code.svg")
+[Flow of Code](./Flow of code.svg)
 
 # Some known issues
 The file extension is overwrriten(appended)<br>
