@@ -11,6 +11,9 @@ Parameters:<br>
 -e : To encode the file<br>
 -d : To decode the file<br>
 
+# Code flow in general terms
+[!title]("flow of code.svg")
+
 # Some known issues
 The file extension is overwrriten(appended)<br>
 For ex. if you compress a file with name Demo.txt it creates new file with name Demo.txt.aar Also when you decode this Demo.txt.aar you will get your new file with name Demo.txt.aar.txt<br>
