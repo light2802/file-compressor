@@ -1,0 +1,51 @@
+Take input <filename.txt ,
+parameters(e,d)>;
+if(parameter==e)
+{
+make and open new file wi
+th name filename.txt.aar(Ju
+st adding.aar to the filena
+me);
+Read file and add symbols
+to the linked list and adj
+ust frequency accordingly;
+construct huffman tree fr
+om the linked list of symbo
+ls;
+generate huffman codes fr
+om the tree;
+write file header(this wi
+ll be used to recreate the
+huffman tree while decoding
+)
+(has the mapping table);
+open the input file again
+and read characters;
+write corresponding symbo
+ls/codes in the new file;
+END
+}
+else if(parameter==d)
+{
+make and open new file by
+removing.aar from the file
+name and adding .txt;
+Read file header;
+1. Get no. of different c
+har in the table;
+2. Allocate memory to rec
+reate table for that many c
+haracters;
+3. get padding size;
+Read 1 byte at a time fro
+m the rrest of file and wri
+te corresponding symbol in
+the new file;
+END;
+}
+else
+{
+Raise error Invalid Param
+aters/File not found;
+END;
+}
