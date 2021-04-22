@@ -10,10 +10,8 @@ typedef struct codeTable
     char code[MAX];
 } codeTable;
 
-// padding is done to ensure that the code generated for each charater will fit byte size.
-// i.e : 4 byte + 3bits will be consider as 5 bits.
-char padding;
-unsigned char N;
+
+void restore_extension(char* str);
 
 #endif //compression_h_INCLUDED
 

@@ -13,12 +13,11 @@ Author: Aarya Chaumal
 extern char padding;
 extern unsigned char N;
 
-char compressed_extension[]  = ".aar";
-char decompressed_extension[] = ".txt";
-
 //Head and root nodes  in the linked list.
 node* HEAD = NULL;
 node* ROOT = NULL;
+
+char compressed_extension[]  = ".aar";
 
 codeTable *codelist;
 int n;
@@ -42,7 +41,7 @@ int main(int argc, char** argv)
                 int t;
                 printf("\n***Automated File Compression***\n");
                 printf("\nCreating new compressed file...............\n");
-                argv[3]=(char *)malloc(sizeof(char)*(strlen(argv[2])+strlen(compressed_extension)+1));
+                argv[3]=(char *)malloc(sizeof(char)*(strlen(argv[2])+(strlen(compressed_extension))+1));
                 strcpy(argv[3],argv[2]);
                 strcat(argv[3],compressed_extension);
                 argc++;
@@ -99,9 +98,10 @@ int main(int argc, char** argv)
                 char *decoded;
                 int i;
                 printf("***Huffman Decoding***\n");
-                argv[3]=(char *)malloc(sizeof(char)*(strlen(argv[1])+strlen(decompressed_extension)+1));
+                argv[3]=(char *)malloc(sizeof(char)*(strlen(argv[1])+4+1));
                 strcpy(argv[3],argv[2]);
-                strcat(argv[3],decompressed_extension);
+                restore_extension(argv[3]);
+                printf("\n!!!!%s\n",argv[3]);
                 argc++;
                 if((fp=fopen(argv[2],"rb"))==NULL)
                 {

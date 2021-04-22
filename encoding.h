@@ -5,7 +5,6 @@
 #define LEAF 0
 #define INTERNAL 1
 
-
 typedef struct node 
 {
     char x;
