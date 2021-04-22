@@ -189,7 +189,7 @@ void addSymbol(char c)
 			m=p->next;
 			q->next=p->next;
 			p->next=NULL;
-			insert(p,HEAD);
+			insert(p,m);
 		}
 	}
 	else  //p->next==NULL , all list traversed c is not found, insert it at beginning

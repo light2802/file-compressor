@@ -20,7 +20,7 @@ char *decodeBuffer(char b)
     buffer = [1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]
             k
     b   =        [ 1 0 1 1 0 0 1 1 ]
-    //put b in integer t right shift k+1 times then '&' with buffer; k=k+8;
+    //put b in integer t right shift k+1 times then '&&' with buffer; k=k+8;
     buffer = [1 0 0 1 1 0 1 1 0 0 1 1 0 0 0 0]
                     k
     */
@@ -35,10 +35,11 @@ char *decodeBuffer(char b)
     k=k+8;			//first useless bit index +8 , new byte added
 
     if(padding!=0)	// on first call
-    {buffer=buffer<<padding;
-    k=8-padding;	//k points to first useless bit index
-    padding=0;}
-
+    {
+        buffer=buffer<<padding;
+        k=8-padding;	//k points to first useless bit index
+        padding=0;
+    }
 
     //loop to find matching codewords
     while(i<n)
@@ -53,7 +54,7 @@ char *decodeBuffer(char b)
             if(k==0) break;
             continue;
         }
-    i++;
+        i++;
     }
 
     decoded[j]='\0';
@@ -86,7 +87,7 @@ char *int2string(int n)
 
 int fileError(FILE *fp)
 {
-    printf("[!]File read Error.\n[ ]File is not compressed using huffman.\n");
+    printf("[!]File read Error.\n[ ]File is not compressed using aar command.\n");
     fclose(fp);
     return -3;
 }

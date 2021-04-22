@@ -5,8 +5,8 @@
 #define LEAF 0
 #define INTERNAL 1
 
-typedef struct node 
-{
+typedef struct node         //Its a singly linked list node as well as a binary tree nodes
+{                          //This struct helps to convert the singly linked list directly to the tree
     char x;
     int freq;
     char* code;
