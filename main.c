@@ -103,9 +103,9 @@ int main(int argc, char** argv)
                 fclose(input);
                 fclose(output);
                 printf("Entropy : %f\n",entropy);
-                printf("Time to make tree and generate output : %lf sec",time);
+                printf("Time to make tree and generate output : %lf sec\n",time);
                 printf("Input file size : %ld bytes\n",in_size);
-                printf("Input file size : %ld bytes\n",out_size);
+                printf("Output file size : %ld bytes\n",out_size);
 
                 record(in_size,entropy,out_size,time);
                 return 0;
