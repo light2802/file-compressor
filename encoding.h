@@ -4,11 +4,11 @@
 //Internal and Leaf nodes
 #define LEAF 0
 #define INTERNAL 1
-
+#include <stdio.h>
 typedef struct node         //Its a singly linked list node as well as a binary tree nodes
 {                          //This struct helps to convert the singly linked list directly to the tree
     char x;
-    int freq;
+    unsigned int freq;
     char* code;
     int type;
     struct node* next;

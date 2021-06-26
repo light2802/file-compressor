@@ -6,9 +6,11 @@ Author: Aarya Chaumal
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "encoding.h"
 #include "decoding.h"
 #include "compression.h"
+#include "entropy.h"
 
 extern char padding;
 extern unsigned char N;
@@ -27,6 +29,7 @@ int n;
 
 int main(int argc, char** argv)
 {
+    clock_t start,end;
     if(argc<=3)
     {
         int choice=0;
@@ -51,18 +54,19 @@ int main(int argc, char** argv)
                     printf("Error, Input file does not exists, Check the file name\n");
                     return -1;
                 }
+
+                start=clock();
+
                 printf("Initiating the compression sequence.................\n");
                 printf("Reading input file %s\n",argv[2]);
                 while(fread(&ch,sizeof(char),1,fp)!=0)
                     addSymbol(ch);
                 fclose(fp);
-
                 printf("Constructing Huffman-Tree....................\n");
                 makeTree();
                 printf("Assigning codewords..........................\n");
                 //Pre order traversal of the of the huffman code.
                 genCode(ROOT,"\0");
-
                 printf("Compressing the file.........................\n");
                 fp=fopen(argv[2],"r");
                 if(fp==NULL)
@@ -76,7 +80,6 @@ int main(int argc, char** argv)
                     printf("\n[!]Output file cannot be opened.\n");
                     return -2;
                 }
-
                 printf("\nReading input file %s.......................",argv[2]);
                 printf("\nWriting file %s........................",argv[3]);
                 printf("\nWriting File Header..............................");
@@ -87,8 +90,12 @@ int main(int argc, char** argv)
                     writeCode(ch,fp1);
                 fclose(fp);
                 fclose(fp1);
-
                 printf("\n***Done***\n");
+
+                end=clock();
+
+                printf("Entropy : %f\n",calc_entropy(HEAD));
+                printf("Time to make tree and generate output : %lf sec",(double)(end - start) / (double)(CLOCKS_PER_SEC));
                 return 0;
             }
             case 2:
