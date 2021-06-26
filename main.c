@@ -99,7 +99,7 @@ int main(int argc, char** argv)
                 float entropy = calc_entropy(HEAD);
                 FILE* input=fopen(argv[2],"r");
                 FILE* output=fopen(argv[3],"r");
-                long double in_size=calc_file_size(input),out_size=calc_file_size(output);
+                long int in_size=calc_file_size(input),out_size=calc_file_size(output);
                 fclose(input);
                 fclose(output);
                 printf("Entropy : %f\n",entropy);

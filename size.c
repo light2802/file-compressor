@@ -4,5 +4,5 @@
 long int calc_file_size(FILE *file)
 {
     fseek(file, 0L, SEEK_END);
-    return ftell(file);
+    return (long int)ftell(file);
 }
