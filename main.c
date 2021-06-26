@@ -12,6 +12,7 @@ Author: Aarya Chaumal
 #include "compression.h"
 #include "entropy.h"
 #include "size.h"
+#include "record.h"
 
 extern char padding;
 extern unsigned char N;
@@ -94,15 +95,19 @@ int main(int argc, char** argv)
                 printf("\n***Done***\n");
 
                 end=clock();
-
-                printf("Entropy : %f\n",calc_entropy(HEAD));
-                printf("Time to make tree and generate output : %lf sec",(double)(end - start) / (double)(CLOCKS_PER_SEC));
+                double time = (double)(end - start) / (double)(CLOCKS_PER_SEC);
+                float entropy = calc_entropy(HEAD);
                 FILE* input=fopen(argv[2],"r");
                 FILE* output=fopen(argv[3],"r");
-                printf("Input file size : %ld bytes\n",calc_file_size(input));
-                printf("Input file size : %ld bytes\n",calc_file_size(output));
+                long double in_size=calc_file_size(input),out_size=calc_file_size(output);
                 fclose(input);
                 fclose(output);
+                printf("Entropy : %f\n",entropy);
+                printf("Time to make tree and generate output : %lf sec",time);
+                printf("Input file size : %ld bytes\n",in_size);
+                printf("Input file size : %ld bytes\n",out_size);
+
+                record(in_size,entropy,out_size,time);
                 return 0;
             }
             case 2:
