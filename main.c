@@ -11,6 +11,7 @@ Author: Aarya Chaumal
 #include "decoding.h"
 #include "compression.h"
 #include "entropy.h"
+#include "size.h"
 
 extern char padding;
 extern unsigned char N;
@@ -96,6 +97,12 @@ int main(int argc, char** argv)
 
                 printf("Entropy : %f\n",calc_entropy(HEAD));
                 printf("Time to make tree and generate output : %lf sec",(double)(end - start) / (double)(CLOCKS_PER_SEC));
+                FILE* input=fopen(argv[2],"r");
+                FILE* output=fopen(argv[3],"r");
+                printf("Input file size : %ld bytes\n",calc_file_size(input));
+                printf("Input file size : %ld bytes\n",calc_file_size(output));
+                fclose(input);
+                fclose(output);
                 return 0;
             }
             case 2:
