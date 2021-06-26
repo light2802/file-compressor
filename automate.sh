@@ -5,5 +5,5 @@ do
     base64 /dev/urandom | head -c $i > random.txt
     ./aar.exe -e random.txt
     rm random.txt
-    a=`expr $a + 1`
+    i=`expr $i + 1`
 done
