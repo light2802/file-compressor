@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env perl
 i=1
 while [ $i -lt 10000000000 ]
 do
-    base64 /dev/urandom | head -c $i > random.txt
+    lorem -w $i > random.txt
     ./aar.exe -e random.txt
     rm random.txt
     rm random.txt.aar
