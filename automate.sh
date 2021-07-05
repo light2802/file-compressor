@@ -1,10 +1,13 @@
 #!/bin/bash
+echo "start"
 i=1
-while [ $i -lt 10000000000 ]
+base64 /dev/urandom | head -c 1000000000 > random.txt
+while [ $i -lt 500 ]
 do
-    base64 /dev/urandom | head -c $i > random.txt
-    ./aar.exe -e random.txt
+    ./a.out -e random.txt
     rm random.txt
-    rm random.txt.aar
-    i=`expr $i + 10`
+    mv random.txt.aar random.txt
+    i=`expr $i + 1`
 done
+
+echo "end"
